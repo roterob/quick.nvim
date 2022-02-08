@@ -42,8 +42,14 @@ https://user-images.githubusercontent.com/19674362/139526856-bdd9023d-8780-4b0f-
 
 ## Prerequisites
 
-- [Neovim 0.5 or above](https://neovim.io)
-- [Node.js](https://nodejs.org)
+- [Neovim 0.6 or above](https://neovim.io)
+- [Node.js > v12](https://nodejs.org)
+
+> Windows
+
+```sh
+choco install fd ripgrep mingw neovim
+```
 
 ## Setup quick.nvim
 
@@ -55,8 +61,16 @@ If you want to receive updates as this configuration gets patched, then clone
 this repository into your `.config` directory, or wherever you keep your
 current Neovim configuration.
 
+> Unix
+
 ```sh
-git clone git@github.com:albingroen/quick.nvim.git ~/.config/nvim
+git clone https://github.com/roterob/quick.nvim ~/.config/nvim
+```
+
+> Windows
+
+```sh
+git clone https://github.com/roterob/quick.nvim ~/AppData/local/nvim
 ```
 
 #### Releases
@@ -74,15 +88,35 @@ https://github.com/albingroen/quick.nvim/releases
 quick.nvim uses [Packer](https://github.com/wbthomason/packer.nvim) as its
 Neovim plugin manager.
 
+> Unix
+
 ```
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 ```
 
+> Windows
+
+```
+git clone https://github.com/wbthomason/packer.nvim\
+"$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
+```
+
 To install the plugins used by quick.nvim, you need to do so using Packer.
+
+> Unix
 
 ```
 nvim ~/.config/nvim/init.lua
+```
+
+```
+:PackerInstall
+```
+
+> Windows
+```
+nvim ~/AppData/Local/nvim/init.lua
 ```
 
 ```
@@ -121,8 +155,8 @@ this.
 |           | \<C-S\>      | Open search & replace          |
 |           | \<leader-t\> | Open a terminal buffer         |
 |           | sp           | Split window horizontally      |
-|           | tj           | Move one tab left              |
-|           | tk           | Move one tab right             |
+|           | th           | Move one tab left              |
+|           | tl           | Move one tab right             |
 |           | tn           | Create a new tab               |
 |           | to           | Close all other tabs           |
 |           | vs           | Split window vertically        |
